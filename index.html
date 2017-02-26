@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cherry Scrapper</title>
+
+  <link href="/static/css/style.css" rel="stylesheet">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.1.1/masonry.pkgd.js"></script>
+  <script>
+
+  $( function() {
+
+  $('#container').masonry({
+    itemSelector: '.item',
+    columnWidth: 50
+  });
+
+});
+  </script>
+</head>
+<body>
+
+<h1>{{time}}</h1>
+
+<div id="container">
+{% for i in data %}
+  <div class="item">
+    <p>
+      <b>SYMBOL: </b>{{i.symbol}}
+    </p>
+    <p>
+      <b>SERIES: </b>{{i.series}}
+    </p>
+    <p>
+      <b>OPEN PRICE: </b>{{i.openPrice}}
+    </p>
+    <p>
+      <b>HIGH PRICE: </b>{{i.highPrice}}
+    </p>
+    <p>
+      <b>LOW PRICE: </b>{{i.lowPrice}}
+    </p>
+    <p>
+      <b>TLP: </b>{{i.ltp}}
+    </p>
+    <p>
+      <b>PREVIOUS PRICE: </b>{{i.previousPrice}}
+    </p>
+    <p>
+      <b>NET PRICE: </b>{{i.netPrice}}
+    </p>
+    <p>
+      <b>TRADED QUANTITY: </b>{{i.tradedQuantity}}
+    </p>
+    <p>
+      <b>TURNOVER IN LAKHS: </b>{{i.turnoverInLakhs}}
+    </p>
+    <p>
+      <b>LAST CORP ANNOUNCEMENT DATE: </b>
+      {{i.lastCorpAnnouncementDate}}
+    </p>
+    <p>
+      <b>LAST CORP ANNOUNCEMENT: </b><br>
+      {{i.lastCorpAnnouncement}}
+    </p>
+
+  </div>
+{% endfor %}
+</div>
+
+</body>
+</html>

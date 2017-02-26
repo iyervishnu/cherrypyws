@@ -1,0 +1,4 @@
+cherrypy
+requests
+redis
+jinja2==2.9.5
